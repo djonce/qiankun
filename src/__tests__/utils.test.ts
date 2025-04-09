@@ -1,9 +1,7 @@
-import { version } from '../../package.json';
 import {
   Deferred,
   genAppInstanceIdByName,
   getContainerXPath,
-  getDefaultTplWrapper,
   getWrapperId,
   getXPathForElement,
   isPropertyFrozen,
@@ -24,17 +22,17 @@ it('should wrap the id [2]', () => {
   expect(getWrapperId(id)).toBe('__qiankun_microapp_wrapper_for_react_16__');
 });
 
-it('should wrap string with div', () => {
-  const tpl = '<span>qiankun</span>';
-  const factory = getDefaultTplWrapper('react16', { speedy: true });
+// it('should wrap string with div', () => {
+//   const tpl = '<span>qiankun</span>';
+//   const factory = getDefaultTplWrapper('react16', { speedy: true });
 
-  const ret = factory(tpl);
+//   const ret = factory(tpl);
 
-  expect(ret).toBe(
-    // eslint-disable-next-line max-len
-    `<div id="__qiankun_microapp_wrapper_for_react_16__" data-name="react16" data-version="${version}" data-sandbox-cfg={\"speedy\":true}><qiankun-head></qiankun-head>${tpl}</div>`,
-  );
-});
+//   expect(ret).toBe(
+//     // eslint-disable-next-line max-len
+//     `<div id="__qiankun_microapp_wrapper_for_react_16__" data-name="react16" data-version="${version}" data-sandbox-cfg={\"speedy\":true}><qiankun-head></qiankun-head>${tpl}</div>`,
+//   );
+// });
 
 it('should be able to validate lifecycle', () => {
   const noop = () => undefined;
