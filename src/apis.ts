@@ -104,6 +104,15 @@ export function loadMicroApp<T extends ObjectType>(
   // If we compute it every time, the container dom structure most probably been changed and result in a different xpath value
   const containerXPath = getContainerXPath(container);
   const appContainerXPathKey = `${name}-${containerXPath}`;
+  console.log(
+    'loadMicroApp :',
+    ' app name',
+    name,
+    ' container xpath',
+    containerXPath,
+    ' appContainerXPathKey',
+    appContainerXPathKey,
+  );
 
   let microApp: MicroApp;
   const wrapParcelConfigForRemount = (config: ParcelConfigObject): ParcelConfigObject => {
